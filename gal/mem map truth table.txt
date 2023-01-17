@@ -1,0 +1,113 @@
+
+
+128K bytes of main memory (expandable to (128+3*64)320K bytes in 64K byte increments or (128+3*256)=896K bytes in 256K byte increments)
+
+
+Range Option RAM
+0x20000 - 0xDFFFF
+
+A16 0
+A17 1
+A18 0
+A19 0
+
+A16 1
+A17 0
+A18 1
+A19 1
+
+65536 262144
+
+configurazione tutti banchi da 64k
+IO_M Ben1 Ben2 Ben3 A19  A18  A17  A16
+ 0    1    1    1    0    0    1    0   0x20000 attiva bank 1 131.072
+ 0    1    1    1    0    0    1    1   0x30000 attiva bank 2 196.608
+ 0    1    1    1    0    1    0    0   0x40000 attiva bank 3 262.144
+
+
+configurazione tutti banchi da 256k
+IO_M Ben1 Ben2 Ben3 A19  A18  A17  A16
+ 0    0    0    0    0    0    1    0   0x20000 attiva bank 1 131.072
+ 0    0    0    0    0    0    1    1   0x30000 attiva bank 1 196.608
+ 0    0    0    0    0    1    0    0   0x40000 attiva bank 1 262.144
+ 0    0    0    0    0    1    0    1   0x50000 attiva bank 1 327.680
+ 0    0    0    0    0    1    1    0   0x60000 attiva bank 2 393.216
+ 0    0    0    0    0    1    1    1   0x70000 attiva bank 2 458.752
+ 0    0    0    0    1    0    0    0   0x80000 attiva bank 2 524.288
+ 0    0    0    0    1    0    0    1   0x90000 attiva bank 2 589.824
+ 0    0    0    0    1    0    1    0   0xA0000 attiva bank 3 655.360
+ 0    0    0    0    1    0    1    1   0xB0000 attiva bank 3 720.896
+ 0    0    0    0    1    1    0    0   0xC0000 attiva bank 3 786.432
+ 0    0    0    0    1    1    0    1   0xD0000 attiva bank 3 851.968
+
+configurazione banco 1 da 256, banco 2 e 3 da 64
+IO_M Ben1 Ben2 Ben3 A19  A18  A17  A16
+ 0    0    1    1    0    0    1    0   0x20000 attiva bank 1 131.072
+ 0    0    1    1    0    0    1    1   0x30000 attiva bank 1 196.608
+ 0    0    1    1    0    1    0    0   0x40000 attiva bank 1 262.144
+ 0    0    1    1    0    1    0    1   0x50000 attiva bank 1 327.680
+ 0    0    1    1    0    1    1    0   0x60000 attiva bank 2 393.216
+ 0    0    1    1    0    1    1    1   0x70000 attiva bank 3 458.752
+
+configurazione banco 1 da 64, banco 2 da 256 e 3 da 64
+IO_M Ben1 Ben2 Ben3 A19  A18  A17  A16
+ 0    1    0    1    0    0    1    0   0x20000 attiva bank 1 131.072
+ 0    1    0    1    0    0    1    1   0x30000 attiva bank 2 196.608
+ 0    1    0    1    0    1    0    0   0x40000 attiva bank 2 262.144
+ 0    1    0    1    0    1    0    1   0x50000 attiva bank 2 327.680
+ 0    1    0    1    0    1    1    0   0x60000 attiva bank 2 393.216
+ 0    1    0    1    0    1    1    1   0x70000 attiva bank 3 458.752
+ 
+configurazione banco 1 da 64, banco 2 da 64 e 3 da 256
+IO_M Ben1 Ben2 Ben3 A19  A18  A17  A16 
+ 0    1    1    0    0    0    1    0   0x20000 attiva bank 1 131.072
+ 0    1    1    0    0    0    1    1   0x30000 attiva bank 2 196.608
+ 0    1    1    0    0    1    0    0   0x40000 attiva bank 3 262.144
+ 0    1    1    0    0    1    0    1   0x50000 attiva bank 3 327.680
+ 0    1    1    0    0    1    1    0   0x60000 attiva bank 3 393.216
+ 0    1    1    0    0    1    1    1   0x70000 attiva bank 3 458.752
+
+configurazione banco 1 da 256, banco 2 da 64 e 3 da 256
+IO_M Ben1 Ben2 Ben3 A19  A18  A17  A16
+ 0    0    1    0    0    0    1    0   0x20000 attiva bank 1 131.072
+ 0    0    1    0    0    0    1    1   0x30000 attiva bank 1 196.608
+ 0    0    1    0    0    1    0    0   0x40000 attiva bank 1 262.144
+ 0    0    1    0    0    1    0    1   0x50000 attiva bank 1 327.680
+ 0    0    1    0    0    1    1    0   0x60000 attiva bank 2 393.216
+ 0    0    1    0    0    1    1    1   0x70000 attiva bank 3 458.752
+ 0    0    1    0    1    0    0    0   0x80000 attiva bank 3 524.288
+ 0    0    1    0    1    0    0    1   0x90000 attiva bank 3 589.824
+ 0    0    1    0    1    0    1    0   0xA0000 attiva bank 3 655.360
+ 
+configurazione banco 1 da 64, banco 2 da 256 e 3 da 256
+IO_M Ben1 Ben2 Ben3 A19  A18  A17  A16
+ 0    1    0    0    0    0    1    0   0x20000 attiva bank 1 131.072
+ 0    1    0    0    0    0    1    1   0x30000 attiva bank 2 196.608
+ 0    1    0    0    0    1    0    0   0x40000 attiva bank 2 262.144
+ 0    1    0    0    0    1    0    1   0x50000 attiva bank 2 327.680
+ 0    1    0    0    0    1    1    0   0x60000 attiva bank 2 393.216
+ 0    1    0    0    0    1    1    1   0x70000 attiva bank 3 458.752
+ 0    1    0    0    1    0    0    0   0x80000 attiva bank 3 524.288
+ 0    1    0    0    1    0    0    1   0x90000 attiva bank 3 589.824
+ 0    1    0    0    1    0    1    0   0xA0000 attiva bank 3 655.360
+ 
+configurazione banco 1 da 256, banco 2 da 256 e 3 da 64
+IO_M Ben1 Ben2 Ben3 A19  A18  A17  A16
+ 0    0    0    1    0    0    1    0   0x20000 attiva bank 1 131.072
+ 0    0    0    1    0    0    1    1   0x30000 attiva bank 1 196.608
+ 0    0    0    1    0    1    0    0   0x40000 attiva bank 1 262.144
+ 0    0    0    1    0    1    0    1   0x50000 attiva bank 1 327.680
+ 0    0    0    1    0    1    1    0   0x60000 attiva bank 2 393.216
+ 0    0    0    1    0    1    1    1   0x70000 attiva bank 2 458.752
+ 0    0    0    1    1    0    0    0   0x80000 attiva bank 2 524.288
+ 0    0    0    1    1    0    0    1   0x90000 attiva bank 2 589.824
+ 0    0    0    1    1    0    1    0   0xA0000 attiva bank 3 655.360
+
+
+
+
+B1 = IO_M' Ben1' A19' A18' A17  + IO_M' Ben1' A19' A18 A17'  + IO_M' A19' A18' A17 A16';
+B2 = IO_M' Ben1' Ben2' A19' A18 A17  + IO_M' Ben1 Ben2' A19' A18 A17'  + IO_M' Ben1' Ben2' A19 A18' A17'  + IO_M' Ben1 A19' A18' A17 A16 + IO_M' Ben1' A19' A18 A17 A16' + IO_M' Ben2' A19' A18 A17 A16';
+B3 = IO_M' Ben1 Ben2 Ben3' A19' A18  + IO_M' Ben1' Ben2' Ben3' A19 A18' A17  + IO_M' Ben1' Ben2' Ben3' A19 A18 A17'  + IO_M' Ben1' Ben2 Ben3' A19 A18' A17'  + IO_M' Ben1 Ben2' Ben3' A19 A18' A17'  + IO_M' Ben1' Ben2 A19' A18 A17 A16 + IO_M' Ben1 Ben2' A19' A18 A17 A16 + IO_M' Ben1' Ben2' A19 A18' A17 A16' + IO_M' Ben1 Ben2 A19' A18 A17' A16' + IO_M' Ben1' Ben3' A19 A18' A17 A16' + IO_M' Ben2' Ben3' A19 A18' A17 A16';
+
+
