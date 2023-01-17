@@ -1,0 +1,57 @@
+Name     E7 ;
+PartNo   00 ;
+Date     29/11/2021 ;
+Revision 01 ;
+Designer Engineer ;
+Company  Nicola Avanzi ;
+Assembly None ;
+Location  ;
+Device   g22v10 ;
+
+$define VCC 'b'1
+
+/* *************** INPUT PINS *********************/
+PIN  2  = IO_M                    ; /*  8088 extension board access         */ 
+PIN  3  = Ben1                    ; /*  Bank 1 set (256kb low - 64kb High)  */ 
+PIN  4  = Ben2                    ; /*  Bank 2 set (256kb low - 64kb High)  */ 
+PIN  5  = Ben3                    ; /*  Bank 3 set (256kb low - 64kb High)  */ 
+PIN  6  = A19                     ; /*                                      */ 
+PIN  7  = A18                     ; /*                                      */ 
+PIN  8  = A17                     ; /*                                      */ 
+PIN  9  = A16                     ; /*                                      */ 
+
+/* *************** OUTPUT PINS *********************/
+PIN 23  =  B1                     ; /*  Bank1  enable                       */ 
+PIN 22  =  B2                     ; /*  Bank2  enable                       */ 
+PIN 16  =  B3                     ; /*  Bank3  enable                       */ 
+
+
+
+!B1 = 	(!IO_M & !Ben1 & !A19 & !A18 & A17) # 
+	(!IO_M & !Ben1 & !A19 & A18 & !A17) # 
+	(!IO_M & !A19 & !A18 & A17 & !A16);
+
+!B2 = 	(!IO_M & !Ben1 & !Ben2 & !A19 & A18 & A17) #
+	(!IO_M & Ben1 & !Ben2 & !A19 & A18 & !A17) #
+	(!IO_M & !Ben1 & !Ben2 & A19 & !A18 & !A17) #
+	(!IO_M & Ben1 & !A19 & !A18 & A17 & A16) #
+	(!IO_M & !Ben1 & !A19 & A18 & A17 & !A16) #
+	(!IO_M & !Ben2 & !A19 & A18 & A17 & !A16);
+
+!B3 =	(!IO_M & Ben1 & Ben2 & !Ben3 & !A19 & A18) #
+	(!IO_M & !Ben1 & !Ben2 & !Ben3 & A19 & !A18 & A17) #
+	(!IO_M & !Ben1 & !Ben2 & !Ben3 & A19 & A18 & !A17) #
+	(!IO_M & !Ben1 & Ben2 & !Ben3 & A19 & !A18 & !A17) #
+	(!IO_M & Ben1 & !Ben2 & !Ben3 & A19 & !A18 & !A17) #
+	(!IO_M & !Ben1 & Ben2 & !A19 & A18 & A17 & A16) #
+	(!IO_M & Ben1 & !Ben2 & !A19 & A18 & A17 & A16) #
+	(!IO_M & !Ben1 & !Ben2 & A19 & !A18 & A17 & !A16) #
+	(!IO_M & Ben1 & Ben2 & !A19 & A18 & !A17 & !A16) #
+	(!IO_M & !Ben1 & !Ben3 & A19 & !A18 & A17 & !A16) #
+	(!IO_M & !Ben2 & !Ben3 & A19 & !A18 & A17 & !A16);
+
+B1.oe = VCC;
+B2.oe = VCC;
+B3.oe = VCC;
+
+
