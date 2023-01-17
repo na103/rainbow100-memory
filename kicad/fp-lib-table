@@ -1,0 +1,9 @@
+(fp_lib_table
+  (lib (name UPD41256C)(type Legacy)(uri ${KIPRJMOD}/41256/UPD41256C.mod)(options "")(descr ""))
+  (lib (name GAL22V10D-15LP)(type Legacy)(uri ${KIPRJMOD}/GAL22V10/GAL22V10D-15LP.mod)(options "")(descr ""))
+  (lib (name SSW-126-01-T-D)(type Legacy)(uri ${KIPRJMOD}/SSW-126/SSW-126-01-T-D.mod)(options "")(descr ""))
+  (lib (name SSW-130-01-T-D)(type Legacy)(uri ${KIPRJMOD}/SSW-130/SSW-130-01-T-D.mod)(options "")(descr ""))
+  (lib (name NDSR-04V)(type KiCad)(uri ${KIPRJMOD}/NDSR-04V/NDSR-04V.pretty)(options "")(descr ""))
+  (lib (name SSW-126)(type KiCad)(uri ${KIPRJMOD}/SSW-126/SSW-126.pretty)(options "")(descr ""))
+  (lib (name Digital)(type KiCad)(uri ${KIPRJMOD}/Digital.pretty)(options "")(descr ""))
+)
