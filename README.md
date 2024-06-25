@@ -19,8 +19,8 @@ Kicad schematics is derived from [Tony Duell's notes](https://github.com/na103/r
 |1    |Rnet 9x470Ω 10 pin  |RN4                              |4610X-101-471LF     |                               |
 |2    |Rnet 9x1kΩ 10 pin   |RN3 RN2                          |4610X-101-102LF     |                               |
 |1    |Rnet 9x4.7kΩ 10 pin |RN1                              |4610X-AP1-472LF     |                               |
-|9    |R 39Ω               |R18                              |CFR-25JB-52-39R     |                               |
-|1    |R 100Ω              |U21,U26,U29                      |CFR-25JT-52-100R    |                               |
+|9    |R 39Ω               |R10 - R17 R19                    |CFR-25JB-52-39R     |                               |
+|1    |R 100Ω              |R18                              |CFR-25JT-52-100R    |                               |
 |9    |R 47Ω               |R1 - R9                          |CFR-25JB-52-47R     |                               |
 |1    |Switch DIP 4POS     |SW1                              |78RB04ST            |                               |
 |1    |025X025 REC 2X30P   |J1                               |5-102766-4          |                               |
